@@ -1,0 +1,23 @@
+/* Let every hero message take its own space on small screens. */
+@media(max-width:700px){
+ .hero{display:flex;flex-direction:column;align-items:stretch;min-height:auto;height:auto;padding-bottom:140px}
+ .hero .hero-bottom{position:relative;inset:auto;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:28px 18px;margin-top:52px;width:100%;font-size:14px;line-height:1.8;letter-spacing:.02em}
+ .hero-bottom .hero-location{display:block;grid-column:1/-1;text-align:left;font-size:13px;line-height:1.8}
+ .hero .art-caption{display:flex;flex-direction:column;align-items:flex-start;gap:6px;bottom:0;left:9%;right:9%;font-size:13px;line-height:1.5;letter-spacing:.025em}
+ /* Keep device presentations, using a single inexpensive float per visible card. */
+ .project-stage{contain:layout paint;perspective:none}
+ .project-stage .stage-tilt{transform:none;transition:none}
+ .project-stage .stage-float{transform-style:flat;animation:mobile-project-float 8s ease-in-out infinite!important;animation-play-state:paused!important}
+ .project-stage.stage-active .stage-float{animation-play-state:running!important}
+ .stage-layers .stage-float,.stage-artwork .stage-float{animation-name:mobile-project-sway!important}
+ .stage-glide .stage-float{animation-name:mobile-project-glide!important}
+ .project-stage .stage-browser{animation:none!important;filter:none!important;transform:none;box-shadow:0 10px 20px #0005}
+ .project-stage .depth-sheet{filter:none;box-shadow:none}
+ .project-stage .stage-floor,.project-stage .stage-orbit{display:none}
+ .stage-glide .stage-browser:after{animation:none;display:none}
+ .project-stage .stage-screen img{transform:none!important}
+}
+@keyframes mobile-project-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes mobile-project-sway{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-5px) rotate(1deg)}}
+@keyframes mobile-project-glide{0%,100%{transform:translateX(-5px)}50%{transform:translateX(5px)}}
+@media(max-width:700px) and (prefers-reduced-motion:reduce){.project-stage .stage-float{animation:none!important}}

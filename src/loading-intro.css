@@ -1,0 +1,8 @@
+.loading-intro.pixel-loader{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:#000!important;color:#fff!important;touch-action:none;overscroll-behavior:none}
+.loader-mark{position:relative;width:63px;height:49px}
+.random-cube-loader{position:relative;width:63px;height:49px}
+.loader-line{position:absolute;top:calc(100% + 22px);left:0;width:63px;height:1px;background:#ffffff25;overflow:hidden}
+.loader-line-fill{display:block;width:100%;height:100%;background:#fff;transform:scaleX(0);transform-origin:0 50%;will-change:transform}
+.loader-cube{position:absolute;width:7px;height:7px;display:block;background:#fff;border:0;border-radius:0;will-change:opacity,transform}
+#main:focus{outline:none}
+@media(prefers-reduced-motion:reduce){.loader-cube{transition:none}}

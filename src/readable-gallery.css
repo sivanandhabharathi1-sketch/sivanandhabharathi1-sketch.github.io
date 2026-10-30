@@ -1,0 +1,40 @@
+/* Each project has its own full-width viewport chapter. */
+html{scroll-snap-type:y proximity}
+.project-grid,.project-grid.editorial-projects{display:flex;flex-direction:column;gap:48px}
+.project-grid>.project-card,.editorial-projects>.project-card:nth-child(2n+3){width:100%;margin-top:0;min-height:90svh;display:flex;align-items:center;scroll-snap-align:start;scroll-margin-top:24px}
+.project-open{width:100%}
+.project-grid .project-card .project-image{width:100%;height:min(68svh,760px);min-height:360px;aspect-ratio:auto}
+.stage-tilt{width:min(81%,calc(62svh * 1.72))}
+.project-caption h3,.editorial-projects>.project-card:first-child .project-caption h3{font-size:26px}
+.project-caption>span,.project-meta{font-size:14px}
+.project-index,.editorial-projects>.project-card:first-child .project-index{font-size:12px}
+.stage-chrome{font-size:10px;height:30px}
+.eyebrow,.section-label,.tiny-label{font-size:12px;line-height:1.7}
+.hero-bottom,.hero-bottom a,.art-caption{font-size:11px;line-height:1.7}
+.hero-description,.practice-intro p,.section-heading>p,.about-copy .about-small,.company-experience article>p,.company-experience-label>p,.tools-context{font-size:16px}
+.company-experience article>span,.company-experience-label>span,.company-experience small,.practice-credits span,.tools-preview-hint,.tool-preview-credit{font-size:11px;line-height:1.8}
+.filter{font-size:13px}.filter sup{font-size:10px}.work-note{font-size:13px}.profile-disciplines p,.tool p{font-size:14px}
+.footer>span,.footer>a:last-child,.socials a{font-size:12px}
+/* Lift the folder with separated layers, a soft floor shadow and distant-paper blur. */
+.project-folder-link{width:220px;perspective:700px;padding-top:12px}
+.project-folder-scene{width:210px;height:190px;transform-style:preserve-3d;animation:folder-hover 6s ease-in-out infinite}
+.project-folder-front{height:100px;transform:rotateY(-9deg) rotateX(6deg) translateZ(18px);box-shadow:3px 3px 0 #374855,6px 6px 0 #161912,12px 20px 26px #0008,inset 0 1px #fff4}
+.project-folder-back{height:105px;filter:blur(.35px);transform:translateZ(-12px)}
+.project-folder-paper{left:58px;bottom:37px;width:96px;height:82px}.project-folder-paper img{height:57px}.project-folder-paper>span{font-size:8px;line-height:17px}
+.project-folder-paper.paper-0{filter:blur(.5px)}.project-folder-paper.paper-1{filter:blur(.2px)}
+.project-folder-link:is(:hover,:focus-visible) .project-folder-paper{filter:blur(0)}
+.project-folder-link:is(:hover,:focus-visible) .project-folder-front{transform:translateY(10px) rotateX(-18deg) rotateY(-6deg) translateZ(25px)}
+.project-folder-shadow{bottom:-9px;filter:blur(13px);opacity:.65;transform:translateZ(-30px)}
+.project-folder-tab{font-size:8px;width:115px}.folder-front-title{font-size:13px}.folder-front-title>span{font-size:7px;letter-spacing:.3px}.folder-front-count{font-size:15px;width:30px;height:30px}
+.project-folder-caption{width:190px;font-size:14px;margin-top:18px}
+@keyframes folder-hover{0%,100%{transform:translateY(0) rotateZ(-2deg)}50%{transform:translateY(-10px) rotateZ(1deg)}}
+/* Let the browser scroll vertically across the scene, including over the slider. */
+.hero-art,.interactive-world,.world-canvas,.world-canvas>div,.world-canvas canvas{touch-action:pan-y pinch-zoom}
+@media(max-width:700px){
+ .project-grid .project-card .project-image{height:54svh;min-height:280px}.project-grid>.project-card{min-height:82svh}.stage-tilt{width:87%}
+ .project-caption h3,.editorial-projects>.project-card:first-child .project-caption h3{font-size:21px}.project-caption>span{font-size:12px}.project-index{font-size:10px}
+ .hero-bottom,.hero-bottom a,.art-caption{font-size:9px;letter-spacing:.3px}.hero-description{font-size:15px}
+ .eyebrow,.section-label,.tiny-label{font-size:10px}.company-experience article>p,.about-copy>p,.about-copy .about-small,.practice-intro p{font-size:15px}
+ .project-folder-link{width:210px}.project-folder-scene{width:200px}.project-folder-caption{width:180px;font-size:14px}
+ .filter{font-size:11px}.footer>span{font-size:10px}.stage-chrome{font-size:8px;height:24px}
+}

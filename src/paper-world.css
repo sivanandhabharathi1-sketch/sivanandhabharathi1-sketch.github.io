@@ -1,0 +1,18 @@
+/* A quiet paper-sky atmosphere, with enough contrast for the portfolio content. */
+.site-atmosphere{background:radial-gradient(ellipse at 82% 20%,#536c9738,transparent 65%),linear-gradient(145deg,#101824,#162231 60%,#24243b)}
+[data-theme=light] .site-atmosphere{background:radial-gradient(ellipse at 80% 12%,#b1e1f655,transparent 65%),linear-gradient(155deg,#f4f8fd,#e9f3fa 55%,#efedf9)}
+.site-atmosphere>div,[data-theme=light] .site-atmosphere>div{opacity:.32}
+.word-mask{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.13em;margin-bottom:-.13em}
+.reveal-word{display:inline-block;transform-origin:0 100%}
+.motion-title{line-height:1.13}
+.hero .pressure-line{overflow:hidden;padding-bottom:.19em;margin-bottom:-.19em}
+.hero .pressure-line+.pressure-line{margin-top:.025em}
+.hero h1.pressure-headline{font-weight:500;line-height:1.15}
+.project-grid .project-image{border-radius:12px}
+.project-grid .stage-floor{opacity:.65}
+.experience-section{border-top-color:#b7ccf12a}
+.section-label,.eyebrow{letter-spacing:1.35px}
+.experience-copy h2.motion-title{font-size:clamp(38px,4.2vw,64px)}
+.paper-note{color:#b6c6db}
+html.lenis{scroll-behavior:auto}
+@media(max-width:700px){.site-atmosphere>div,[data-theme=light] .site-atmosphere>div{opacity:.24}.project-grid .project-image{border-radius:8px}}

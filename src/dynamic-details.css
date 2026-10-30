@@ -1,0 +1,7 @@
+.glass-folder-documents{transform:scale(.82);transform-origin:50% 70%}
+.page-next{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;padding-top:100px;padding-bottom:110px;align-items:end}
+.page-next>.next-statement{font-family:PixelOperator,monospace;font-size:clamp(48px,6.8vw,104px);font-weight:400;line-height:1.02;letter-spacing:-.025em;text-transform:uppercase;margin:0}
+.chapter .page-next>.next-statement{color:var(--chapter-ink)!important}
+.page-next>.text-link{white-space:nowrap;margin-bottom:8px}
+.experience-skills{overflow:visible}
+@media(max-width:700px){.page-next{display:block;padding-top:76px;padding-bottom:94px}.page-next>.next-statement{font-size:clamp(36px,10vw,56px);line-height:1.08;margin-bottom:32px}.page-next>.text-link{white-space:normal}}

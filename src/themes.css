@@ -1,0 +1,53 @@
+:root{color-scheme:dark}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:78px;min-height:42px;padding:9px 12px;border:1px solid #73766a66;border-radius:24px;background:#ffffff08;color:#e6e8df;font-size:12px;line-height:1;transition:background .2s,border-color .2s}
+.theme-toggle:hover{background:#0b92f218;border-color:#0b92f299}.theme-toggle svg{width:17px;height:17px;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.site-atmosphere>div{animation:none;background-position:var(--grid-x,0px) 0px}
+/* Compact illustration; keep the link caption readable and easy to click. */
+.glass-folder-link{width:186px;padding-top:0}.glass-folder-scene{width:184px;height:151px}
+.glass-folder-object{inset:auto;left:0;bottom:0;width:230px;height:196px;scale:.78;transform-origin:0 100%}
+.glass-folder-ground{left:20px;right:17px;bottom:0;height:18px;filter:blur(10px)}
+.glass-folder-caption{width:184px;gap:7px;margin-top:12px;font-size:13px}.glass-folder-total{font-size:10px}
+:root[data-theme=light]{color-scheme:light;color:#171a17;background:#fafaf7;--muted:#62685f;--line:#cfd4ca;--accent:#005a9b}
+[data-theme=light] body{background:#fafaf7;color:#171a17}
+[data-theme=light] .site-atmosphere{background:radial-gradient(ellipse at 85% 38%,#5dafe924,transparent 65%),#fafaf7}
+[data-theme=light] .site-atmosphere>div{background-image:linear-gradient(#41493614 1px,transparent 1px),linear-gradient(90deg,#41493614 1px,transparent 1px)}
+[data-theme=light] .theme-toggle{background:#fff9;border-color:#c4cabe;color:#272e24}
+[data-theme=light] .theme-toggle:hover{background:#0b92f233;border-color:#005795}
+[data-theme=light] :is(.nav,.header-cta,.hero-description,.section-heading>p,.practice-intro p,.company-experience-label>p,.company-experience article>p,.about-copy>p,.tools-context,.profile-disciplines p,.project-caption>span,.project-meta,.work-note,.footer>span,.tools-preview-hint,.tool-preview-credit){color:#535c50}
+[data-theme=light] :is(.eyebrow,.section-label,.tiny-label,.hero-bottom,.hero-bottom a,.art-caption,.tools-preview-hint>span){color:#5e6855}
+[data-theme=light] :is(.muted,.monogram){color:#77806f}
+[data-theme=light] :is(.pressure-accent,.motion-word,.contact h2 span){color:#005998}
+[data-theme=light] .accent-dot{background:#005b9c;box-shadow:0 0 10px #0079cf30}
+[data-theme=light] :is(.nav a:hover,.project-open:hover h3){color:#004576}
+[data-theme=light] .filter{background:transparent;color:#505a48}
+[data-theme=light] .filter.active{background:#0b92f244;border-color:#3979a7;color:#21272b}
+[data-theme=light] :is(.practice-credits span,.company-experience article>span,.company-experience small,.company-experience-label>span){color:#2e5068}
+[data-theme=light] .company-experience{background:#f1f3ecb8;border-color:#d2d7ca}
+[data-theme=light] .glass-folder-caption{color:#242c22}
+[data-theme=light] .glass-folder-total{color:#68715f}
+[data-theme=light] .glass-folder-caption svg{color:#004f88}
+[data-theme=light] .glass-folder-ground{background:#29372345}
+[data-theme=light] .tool-preview-trigger .tool-preview-name{color:#2b3427}
+[data-theme=light] .tool-preview-trigger .tool-monogram{background:#f2f4ed;border-color:#afb8a4;color:#48503e}
+[data-theme=light] .tool-preview-trigger[data-active=true] .tool-monogram{background:#171b14;border-color:#171b14;color:#0b92f2}
+[data-theme=light] .tool-preview-trigger[data-active=true] .tool-preview-name{color:#171b14}
+[data-theme=light] .project-dialog{background:#fafbf5;color:#20271d;border-color:#c1c9b7}
+[data-theme=light] .project-dialog :is(.dialog-intro,.project-details dd,.project-details dt){color:#535c4b}
+[data-theme=light] .close-button{color:#242b1f;background:#e6ebde}
+[data-theme=light] .primary{background:#252d20;border-color:#252d20;color:#fff}
+[data-theme=light] .loading-intro{background:#fafaf7;color:#22291c}
+[data-theme=light] .quick-loader-track{background:#d8dfcc}
+[data-theme=light] .quick-loader-track i{background:#005a9a}
+[data-theme=light] .target-cursor{color:#004577}
+[data-theme=light] .contact-arrow{border-color:#a5ae99;color:#004e85}
+[data-theme=light] .project-stage{background:radial-gradient(ellipse at 55% 35%,#60abe033,transparent 65%),linear-gradient(135deg,#f2f3eb,#e0e5d8)}
+[data-theme=light] .stage-layers{background:radial-gradient(ellipse at 55% 35%,#c8b9ed66,transparent 65%),#e9e6f0}
+[data-theme=light] .stage-glide{background:radial-gradient(ellipse at 45% 30%,#c0da9d88,transparent 70%),#eaf0e1}
+[data-theme=light] .stage-artwork{background:radial-gradient(ellipse at 55% 30%,#ffffffbb,transparent 65%),#e0e4dc}
+[data-theme=light] .stage-orbit{border-color:#626e4d18}
+[data-theme=light] .stage-floor{background:#23351833}
+@media(max-width:700px){
+ .site-header{gap:12px}.theme-toggle{min-width:40px;width:40px;height:40px;padding:10px;flex-shrink:0}.theme-toggle span{display:none}.site-header .menu-toggle{margin-left:0}
+ .glass-folder-link{width:180px}.glass-folder-scene{width:178px;height:148px}.glass-folder-object{scale:.76}.glass-folder-caption{width:178px;font-size:13px}.glass-folder-total{font-size:9px}
+ [data-theme=light] .nav.open{background:#fafaf7;border-color:#d2d8c9}
+}

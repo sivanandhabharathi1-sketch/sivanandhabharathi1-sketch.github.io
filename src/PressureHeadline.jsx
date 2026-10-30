@@ -1,0 +1,3 @@
+import React from 'react';
+import './pressure-headline.css';
+export default function PressureHeadline(){return <h1 className="pressure-headline" aria-label="Design, brought to life."><span className="pressure-line"><span className="pressure-chunk">Design, brought</span></span><span className="pressure-line"><span className="pressure-chunk">to </span>{' '}<span className="pressure-chunk pressure-accent">life<svg viewBox="0 0 390 24" preserveAspectRatio="none" aria-hidden="true"><path d="M3 18C101 3 231 3 386 12" fill="none" stroke="currentColor" strokeWidth="5"/></svg></span><span className="pressure-chunk">.</span></span></h1>}

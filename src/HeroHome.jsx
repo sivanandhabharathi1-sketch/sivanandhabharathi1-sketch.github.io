@@ -1,0 +1,12 @@
+import React,{useState,useEffect,lazy,Suspense,Component} from 'react';
+import PressureHeadline from './PressureHeadline';
+import ProjectFolder from './ProjectFolder';
+import HeroFallback from './HeroFallback';
+import './hero-scroll-cue.css';
+const Sculpture=lazy(()=>import('./Sculpture'));
+class SceneBoundary extends Component{state={failed:false};static getDerivedStateFromError(){return {failed:true}}componentDidCatch(){this.props.onFailure?.()}render(){return this.state.failed?null:this.props.children}}
+export default function HeroHome({enabled,scroll}){
+ const [scene,setScene]=useState(false),[ready,setReady]=useState(false);
+ useEffect(()=>{let id;const load=()=>{try{const c=document.createElement('canvas');if(c.getContext('webgl2')||c.getContext('webgl'))setScene(true)}catch{}};if('requestIdleCallback' in window)id=requestIdleCallback(load,{timeout:1400});else id=setTimeout(load,600);return()=>{if('cancelIdleCallback' in window)cancelIdleCallback(id);else clearTimeout(id)}},[]);
+ return <section id="top" className="hero wrap"><div className="hero-copy"><p className="eyebrow"><span className="accent-dot"/> UI/UX DESIGNER / VISUAL & MOTION</p><PressureHeadline enabled={enabled}/><p className="hero-description">I'm Siva, a UI/UX and graphic designer with over one year of experience at Arijentek, working across 3D and 2D animation.</p><div className="hero-actions"><ProjectFolder/></div></div><div className={`hero-art ${ready?'scene-ready':''}`} role="group" aria-label="Floating 3D design tools"><div className="art-orbit"/><HeroFallback/>{scene&&<SceneBoundary onFailure={()=>setReady(false)}><Suspense fallback={null}><Sculpture enabled={enabled} scroll={scroll} onReady={()=>setReady(true)}/></Suspense></SceneBoundary>}<div className="art-caption"><span>DESIGN IN ANOTHER DIMENSION</span><span>AN INTERACTIVE EXPLORATION</span></div><span className="art-marker marker-a">+</span><span className="art-marker marker-b">+</span></div><div className="hero-bottom"><span>Thoughtfully designed.<br/>Expressively animated.</span><a className="hero-scroll-cue" href="#knowledge" aria-label="Scroll to skills"><span className="scroll-mouse" aria-hidden="true"><i/></span><span className="scroll-cue-text">SCROLL TO EXPLORE</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 9 6 6 6-6" stroke="currentColor" strokeWidth="1.5"/></svg></a><span className="hero-location">INDEPENDENT DESIGNER<br/>OPEN FOR COLLABORATION</span></div></section>;
+}

@@ -1,0 +1,6 @@
+@font-face{font-family:'Siva Pressure';src:url('/fonts/roboto-flex-latin.woff2') format('woff2');font-style:normal;font-weight:400 800;font-stretch:75% 125%;font-display:swap}
+.hero h1.pressure-headline{font-family:'Siva Pressure','Space Grotesk',Arial,sans-serif;font-size:clamp(52px,6.1vw,96px);font-weight:500;line-height:1.14;letter-spacing:0;white-space:normal;pointer-events:auto;max-width:100%;margin:0 0 42px;font-optical-sizing:none}
+.pressure-line{display:block;width:max-content;max-width:none;white-space:nowrap}.pressure-line+.pressure-line{margin-top:.025em}.pressure-chunk{position:relative;display:inline-block}.pressure-cell{display:inline-block;vertical-align:baseline;margin-right:-.035em;white-space:pre;text-align:center}.pressure-space{margin-right:0}.pressure-glyph{display:inline-block;font-variation-settings:'opsz' 72,'wght' 500,'wdth' 100}
+.pressure-accent{color:#0b92f2}.pressure-accent svg{position:absolute;left:-.025em;width:calc(100% + .05em);height:.14em;bottom:-.12em;pointer-events:none}
+@media(max-width:1050px){.hero h1.pressure-headline{font-size:6.4vw}}
+@media(max-width:700px){.hero h1.pressure-headline{font-size:clamp(46px,11.2vw,76px);line-height:1.17;margin-bottom:36px}.pressure-cell{margin-right:-.022em}}

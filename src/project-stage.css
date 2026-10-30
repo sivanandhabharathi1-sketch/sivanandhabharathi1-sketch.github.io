@@ -1,0 +1,20 @@
+.project-image:has(.project-stage),.editorial-projects>.project-card:first-child .project-image:has(.project-stage){background:#181a1b;isolation:isolate}
+.project-stage{position:absolute;inset:0;perspective:1200px;display:grid;place-items:center;background:radial-gradient(ellipse at 55% 35%,#0b92f216,transparent 65%),linear-gradient(135deg,#222423,#111315);overflow:hidden;--rx:0deg;--ry:0deg}
+.stage-1{background:radial-gradient(ellipse at 60% 30%,#7d64bd35,transparent 70%),#19191e}
+.stage-2{background:radial-gradient(ellipse at 40% 30%,#77924230,transparent 70%),#161c18}
+.stage-3{background:radial-gradient(ellipse at 60% 30%,#0b92f220,transparent 70%),#1b1c1b}
+.stage-4{background:radial-gradient(ellipse at 50% 30%,#ffffff18,transparent 70%),#18191b}
+.stage-orbit{position:absolute;width:78%;aspect-ratio:1;border:1px solid #ffffff08;border-radius:50%;transform:rotateX(65deg) translateY(30%)}
+.stage-tilt{position:relative;width:81%;transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .35s ease-out;z-index:1}
+.stage-float{animation:project-float 7s ease-in-out infinite;animation-delay:var(--delay);transform:translateY(0) rotateX(7deg) rotateY(-9deg) rotateZ(-3deg)}
+.stage-browser{border:1px solid #85867c66;border-radius:9px;background:#202222;padding:3px;box-shadow:1px 2px 0 #74756b,3px 5px 0 #101211,14px 25px 30px #0006;overflow:hidden}
+.stage-chrome{height:27px;display:flex;align-items:center;justify-content:space-between;padding:0 9px;color:#c0c2ba;font:8px 'DM Sans',sans-serif;letter-spacing:.8px;gap:8px}
+.stage-dots{display:flex;gap:4px}.stage-dots i{width:4px;height:4px;border-radius:50%;background:#74766f}.stage-dots i:first-child{background:#0b92f2}
+.stage-screen{aspect-ratio:1250/650;overflow:hidden;border-radius:2px 2px 5px 5px;background:#eee;position:relative}
+.project-image .stage-screen img,.editorial-projects>.project-card:first-child .project-image .stage-screen img{width:100%;height:100%;display:block;object-fit:cover;transform:none;transition:none}
+.stage-floor{position:absolute;bottom:13%;left:23%;width:58%;height:5%;border-radius:50%;background:#0007;filter:blur(12px);animation:stage-shadow 7s ease-in-out infinite;animation-delay:var(--delay)}
+@keyframes project-float{0%,100%{transform:translateY(0) rotateX(7deg) rotateY(-9deg) rotateZ(-3deg)}50%{transform:translateY(-13px) rotateX(3deg) rotateY(4deg) rotateZ(1deg)}}
+@keyframes stage-shadow{50%{opacity:.5;transform:scale(.9)}}
+.stage-1 .stage-float,.stage-3 .stage-float{animation-direction:reverse}
+.project-open:focus-visible .stage-browser,.project-open:hover .stage-browser{border-color:#0b92f299}
+@media(max-width:700px){.stage-tilt{width:86%}.stage-chrome{height:20px;font-size:6px}.stage-floor{bottom:22%}}

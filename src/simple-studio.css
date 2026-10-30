@@ -1,0 +1,39 @@
+.site-atmosphere{background:#11151b}
+[data-theme=light] .site-atmosphere{background:#fafaf8}
+.site-atmosphere>div,[data-theme=light] .site-atmosphere>div{background-size:72px 72px;opacity:.1;mask-image:linear-gradient(to bottom,transparent,#0004 65%,#000);-webkit-mask-image:linear-gradient(to bottom,transparent,#0004 65%,#000)}
+.hero.landing-hero{position:relative;display:block;isolation:isolate;min-height:640px;height:calc(100svh - 82px);padding:0;background:#7160a5;overflow:hidden}
+.landing-hero .landing-media{position:absolute;inset:0 0 0 auto;width:70%;height:100%;margin:0;z-index:-2;transform-origin:50% 50%}
+.landing-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.landing-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#171725f5 0%,#171725cf 26%,#1717254d 49%,#17172500 75%),linear-gradient(0deg,#14142080,transparent 30%)}
+.landing-hero .landing-copy{padding:clamp(64px,8vh,100px) 0 104px 6.25%;width:55%;max-width:790px}
+.landing-copy .eyebrow{color:#d3d1e2;font-size:11px;letter-spacing:1.8px;margin-bottom:30px}
+.landing-copy h1.landing-title{font-family:'Space Grotesk',Arial,sans-serif;font-size:clamp(64px,6.8vw,104px);line-height:.98;letter-spacing:-5px;font-weight:500;margin:0 0 28px;white-space:normal;color:#fff}
+.landing-title>span{color:#bce7ff}
+.landing-title>.word-mask{color:#fff}
+[data-theme] .landing-copy .eyebrow{color:#d3d1e2}
+.landing-description{font-size:16px;line-height:1.75;color:#dddde7;max-width:350px;margin:0 0 30px}
+.landing-work-link{display:inline-flex;align-items:center;gap:35px;color:#fff;font-size:14px;padding-bottom:9px;border-bottom:1px solid #eee9;transition:gap .25s}
+.landing-work-link:hover{gap:44px}.landing-work-link span{font-size:21px}
+.landing-bottom{position:absolute;bottom:24px;left:6.25%;right:6.25%;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:9px;line-height:1.6;letter-spacing:1px;color:#e2e1ec}
+.landing-bottom a{display:flex;align-items:center;gap:12px}.landing-bottom a span{font-size:18px}
+.studio-intro{text-align:center;max-width:1200px;padding-block:clamp(112px,15vw,200px)}
+.studio-intro .eyebrow{justify-content:center;font-size:11px;margin-bottom:36px}
+.scroll-statement{font-size:clamp(38px,4.5vw,66px);line-height:1.16;font-weight:500;letter-spacing:-2.5px;margin:0 auto 36px;max-width:960px}
+.scroll-statement>span{opacity:.22}
+.studio-intro-copy{font-size:17px;line-height:1.9;color:#9ba5b1;max-width:590px;margin:0 auto 32px}
+.studio-intro .text-link{display:inline-flex}
+[data-theme=light] .studio-intro-copy{color:#5b6671}
+.project-grid .stage-float,.project-grid .stage-browser,.project-grid .stage-floor,.project-grid .stage-browser:after{animation:none!important;filter:none}
+.project-grid .stage-float{transform:none!important}
+.project-grid .depth-sheet,.project-grid .stage-orbit{display:none}
+.project-grid .stage-tilt{transform:none;transition:translate .4s ease}
+.project-open:hover .stage-tilt{translate:0 -4px}
+.project-grid .project-stage{background:#1c222a}
+[data-theme=light] .project-grid .project-stage{background:#eef0f2}
+.project-grid .project-caption h3{font-weight:500}
+.word-mask{padding-bottom:.08em;margin-bottom:-.08em}
+.landing-title .word-mask{padding-bottom:.11em;margin-bottom:-.11em}
+.experience-section .section-label{letter-spacing:1px}
+.work .section-heading{align-items:end}
+@media(max-width:1050px){.landing-hero .landing-copy{width:60%}.landing-copy h1.landing-title{font-size:75px;letter-spacing:-3.5px}.landing-description{font-size:15px;max-width:310px}.landing-bottom{font-size:8px;letter-spacing:.6px}}
+@media(max-width:700px){.hero.landing-hero{height:calc(100svh - 68px);min-height:720px}.landing-hero .landing-media{width:100%;height:57%;top:0;bottom:auto;opacity:.87}.landing-shade{background:linear-gradient(0deg,#171725 0%,#171725 25%,#17172580 60%,transparent 100%)}.landing-hero .landing-copy{position:absolute;left:0;bottom:70px;padding:0 7%;width:100%;max-width:none}.landing-copy .eyebrow{margin-bottom:22px;font-size:10px}.landing-copy h1.landing-title{font-size:62px;letter-spacing:-3px;line-height:1.02;margin-bottom:22px}.landing-description{font-size:15px;line-height:1.7;max-width:330px;margin-bottom:22px}.landing-bottom{bottom:20px;left:7%;right:7%;font-size:8px}.landing-bottom>span{display:none}.landing-bottom>a:last-child{max-width:135px;text-align:right;line-height:1.7}.studio-intro{padding-block:96px}.scroll-statement{font-size:36px;letter-spacing:-1.6px}.studio-intro-copy{font-size:15px}.studio-intro .eyebrow{font-size:9px;letter-spacing:1px}}

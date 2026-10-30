@@ -1,0 +1,18 @@
+.pixel-menu-toggle{display:none}
+@media(max-width:700px){
+ .site-header.reference-nav{grid-template-columns:1fr auto;--mobile-menu-bg:#101010ed;--mobile-menu-line:#ffffff20;--mobile-menu-shadow:#0008}
+ .site-header.reference-nav[data-chapter-theme=light]{--mobile-menu-bg:#fffffff0;--mobile-menu-line:#00000018;--mobile-menu-shadow:#00000016}
+ .site-header.reference-nav .pixel-menu-toggle{grid-column:2;display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:0;background:transparent;color:inherit;justify-self:end;touch-action:manipulation}
+ .pixel-menu-symbol{position:relative;display:block;width:24px;height:24px}
+ .pixel-menu-symbol i{position:absolute;top:0;left:0;width:8px;height:8px;background:currentColor;transform:translate(var(--closed-x),var(--closed-y));transition:transform .28s cubic-bezier(.22,1,.36,1);animation:menu-pixel-pulse 3s steps(2,end) infinite;animation-delay:var(--pixel-delay)}
+ .pixel-menu-toggle[aria-expanded=true] .pixel-menu-symbol i{transform:translate(var(--open-x),var(--open-y));animation:none;opacity:1}
+ .site-header.reference-nav .nav{display:none;grid-column:auto;position:absolute;top:calc(100% + 10px);right:20px;left:auto;bottom:auto;width:min(280px,calc(100% - 40px));max-height:calc(100dvh - 100px);overflow-y:auto;margin:0;padding:10px;gap:0;align-items:stretch;justify-content:flex-start;border:1px solid var(--mobile-menu-line);border-radius:3px;background:var(--mobile-menu-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 16px 40px var(--mobile-menu-shadow);touch-action:pan-y pinch-zoom}
+ .site-header.reference-nav .nav.mobile-nav-open{display:flex;flex-direction:column;animation:mobile-menu-in .22s ease-out both}
+ .site-header.reference-nav .nav a{width:100%;padding:16px 18px;font-family:PixelOperator,monospace;font-size:27px;line-height:1.2;border-bottom:1px solid var(--mobile-menu-line);text-align:left}
+ .site-header.reference-nav .nav a:last-child{border-bottom:0}
+ .site-header.reference-nav .nav a:focus-visible{outline-offset:-3px}
+ .site-header.reference-nav .nav a[aria-current=page]{background:#0b9df20a}
+}
+@keyframes menu-pixel-pulse{0%,65%,100%{opacity:1}75%,85%{opacity:.55}}
+@keyframes mobile-menu-in{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.pixel-menu-symbol i{animation:none;transition:none}.site-header.reference-nav .nav.mobile-nav-open{animation:none}}

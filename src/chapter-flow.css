@@ -1,0 +1,41 @@
+/* Each chapter owns a full-width, lasting surface; the incoming surface also paints its pixel edge. */
+.chapter-flow{position:relative;isolation:isolate}
+.chapter{position:relative;display:flow-root;background:var(--chapter-bg);color:var(--chapter-ink);--line:var(--chapter-line);--muted:var(--chapter-muted);padding-bottom:88px}
+.chapter[data-theme=dark]{--chapter-bg:#000;--chapter-ink:#fff;--chapter-muted:#999;--chapter-secondary:#b4b4b4;--chapter-line:#292929;--chapter-dots:#ffffff10;color-scheme:dark}
+.chapter[data-theme=light]{--chapter-bg:#fff;--chapter-ink:#111;--chapter-muted:#777;--chapter-secondary:#555;--chapter-line:#ddd;--chapter-dots:#0000000d;color-scheme:light}
+.chapter:before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(circle,var(--chapter-dots) .8px,transparent .95px);background-size:24px 24px;background-position:var(--chapter-drift,0px) 0}
+.chapter>*:not(.chapter-edge){position:relative;z-index:1}
+.chapter>.wrap{width:100%;margin-block:0}
+.chapter-edge{position:absolute;left:0;top:-119px;width:100%;height:120px;display:block;overflow:hidden;fill:var(--chapter-bg);z-index:3;pointer-events:none}
+.chapter :is(h1,h2,h3,h4,a,button){color:inherit}
+.chapter :is(.hero-description,.section-heading>p,.practice-intro p,.company-experience-label>p,.company-experience article>p,.about-copy>p,.tools-context,.profile-disciplines p,.project-caption>span,.project-meta,.work-note,.experience-duration>p,.experience-copy>p:not(.eyebrow),.page-next>p,.tool-preview-credit){color:var(--chapter-secondary)!important}
+.chapter :is(.eyebrow,.section-label,.tiny-label,.hero-bottom,.hero-bottom a,.art-caption,.tools-preview-hint,.tool-preview-name,.glass-folder-caption){color:var(--chapter-secondary)!important}
+.chapter :is(.muted,.monogram){color:var(--chapter-muted)!important}
+.chapter :is(.pressure-accent,.experience-duration strong,.motion-word,.contact-heading h1>span,.contact-heading h2>span){color:#0b9df2!important}
+.chapter .experience-duration strong span{color:inherit}
+.chapter :is(.experience-skills li,.practice-credits span,.company-experience small,.company-experience article>span,.company-experience-label>span){color:var(--chapter-secondary)!important;border-color:var(--chapter-line);background:transparent}
+.chapter :is(.company-experience,.project-stage,.project-image:has(.project-stage)){background:var(--chapter-bg)!important}
+.chapter :is(.company-experience,.profile-disciplines>div,.work-filter-bar,.filter-row,.experience-section,.section-label,.page-next){border-color:var(--chapter-line)!important}
+.chapter :is(.filter,.tool-preview-trigger .tool-monogram){color:var(--chapter-secondary)!important;background:transparent;border-color:var(--chapter-line)}
+.chapter .filter.active{color:var(--chapter-ink)!important;background:var(--chapter-dots);border-color:var(--chapter-muted)}
+.chapter .tool-preview-trigger .tool-preview-name{color:var(--chapter-ink)!important}
+.chapter .eyebrow,.chapter .section-label,.chapter .tiny-label{font-size:16px!important}
+.site-header.reference-nav[data-chapter-theme=dark]{background:#000!important;color:#fff!important;border-color:#ffffff12}
+.site-header.reference-nav[data-chapter-theme=light]{background:#fff!important;color:#111!important;border-color:#00000010}
+.site-header[data-chapter-theme=dark] .nav a{color:#b4b4b4!important}.site-header[data-chapter-theme=light] .nav a{color:#555!important}
+.site-header[data-chapter-theme] .nav a[aria-current=page]{color:#0b9df2!important}
+.site-header[data-chapter-theme=dark] .theme-toggle{color:#ddd;background:#ffffff0b;border-color:#ffffff25}
+.site-header[data-chapter-theme=light] .theme-toggle{color:#333;background:#00000004;border-color:#00000018}
+.footer[data-chapter-theme=dark]{background:#000;color:#fff;--muted:#999}.footer[data-chapter-theme=light]{background:#fff;color:#111;--muted:#666}
+.footer[data-chapter-theme]>span{color:var(--muted)!important}
+.footer{max-width:none}
+@media(max-width:700px){.chapter{padding-bottom:64px}.chapter-edge{height:80px;top:-79px}.chapter .eyebrow,.chapter .section-label,.chapter .tiny-label{font-size:14px!important}}
+
+canvas.chapter-edge{image-rendering:pixelated;image-rendering:crisp-edges}
+
+/* Hold the white experience chapter for a full reading viewport between its edges. */
+.chapter:has(>.experience-section){min-height:calc(100svh + 240px)}
+.chapter>.experience-section{min-height:100svh;display:flex;flex-direction:column;justify-content:center;border-top:0}
+.chapter>.experience-section .section-label{flex-shrink:0}
+.reference-nav .nav{grid-column:2}
+@media(max-width:700px){.chapter:has(>.experience-section){min-height:calc(100svh + 160px)}.chapter>.experience-section{min-height:100svh;padding-top:96px;padding-bottom:96px}}

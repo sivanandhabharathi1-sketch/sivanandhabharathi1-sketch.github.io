@@ -1,0 +1,46 @@
+/* One continuous backdrop, independent of the hero canvas bounds. */
+#root{isolation:isolate}
+.site-atmosphere{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:radial-gradient(ellipse at 85% 38%,#09467125,transparent 65%),#101113}
+.site-atmosphere>div{position:absolute;inset:-65%;background-image:linear-gradient(#0b92f210 1px,transparent 1px),linear-gradient(90deg,#0b92f210 1px,transparent 1px);background-size:84px 84px;transform:rotate(-16deg);mask-image:linear-gradient(110deg,#0002,#0009);animation:ambient-grid 45s linear infinite}
+@keyframes ambient-grid{to{translate:84px 0}}
+.hero:before{display:none}.art-orbit{background:transparent}.world-canvas{mask-image:none;-webkit-mask-image:none}
+.project-stage .stage-float{animation-play-state:paused;transform-style:preserve-3d}
+.project-stage.stage-active .stage-float{animation-play-state:running}
+.project-stage:not(.stage-active) .stage-floor{animation-play-state:paused}
+.stage-browser{position:relative;z-index:2;transform-origin:50% 100%}
+/* Laptop: opening lid, metal deck and a restrained camera orbit. */
+.stage-laptop .stage-float{animation:laptop-orbit 10s ease-in-out infinite;animation-play-state:paused;perspective:1200px}
+.stage-laptop .stage-browser{padding:8px 8px 12px;border:2px solid #60625e;border-radius:14px 14px 4px 4px;background:#121514;box-shadow:0 0 0 2px #111,4px 10px 25px #0007;animation:laptop-lid 10s ease-in-out infinite;animation-play-state:inherit}
+.stage-laptop .stage-chrome{height:15px;font-size:0;justify-content:center}.stage-laptop .stage-dots{display:none}.stage-laptop .stage-chrome:after{content:'';width:4px;height:4px;border-radius:50%;background:#777}
+.laptop-base{position:absolute;left:-8%;width:116%;height:24px;bottom:-20px;z-index:3;border-radius:2px 2px 48% 48%;background:linear-gradient(#a1a39a,#5d6059 35%,#252824 80%);box-shadow:0 8px 3px #080a09,0 22px 30px #0008;transform:rotateX(22deg);transform-origin:50% 0}
+.laptop-base i{display:block;margin:auto;width:16%;height:7px;background:#33362f;border-radius:0 0 7px 7px}
+@keyframes laptop-orbit{0%,100%{transform:translateY(0) rotateX(4deg) rotateY(-12deg)}50%{transform:translateY(-14px) rotateX(-2deg) rotateY(9deg)}}
+@keyframes laptop-lid{0%,100%{transform:rotateX(-13deg)}45%,60%{transform:rotateX(2deg)}}
+/* UI kit: three physical planes with a short focus pull, then a long sharp hold. */
+.stage-layers .stage-tilt{width:min(66%,calc(53svh * 1.72))}
+.stage-layers .stage-float{animation:layers-float 9s ease-in-out infinite;animation-play-state:paused}
+.depth-sheet{position:absolute;inset:0;border:1px solid #c4b3f555;border-radius:10px;overflow:hidden;box-shadow:0 20px 40px #0006}
+.depth-sheet img{width:100%;height:100%;object-fit:cover}
+.depth-sheet-back{transform:translate(11%,-15%) translateZ(-100px) rotate(7deg) scale(.96);filter:blur(3px);opacity:.38}
+.depth-sheet-mid{transform:translate(-10%,10%) translateZ(-65px) rotate(-7deg) scale(.98);filter:blur(1.3px);opacity:.6}
+.stage-layers .stage-browser{animation:focus-pull 9s ease-in-out infinite;animation-play-state:inherit}
+@keyframes layers-float{0%,100%{transform:rotateY(-10deg) rotateZ(-3deg) translateY(4px)}50%{transform:rotateY(7deg) rotateZ(2deg) translateY(-10px)}}
+@keyframes focus-pull{0%,100%{filter:blur(2px);transform:translateZ(-20px) scale(.96)}18%,85%{filter:blur(0);transform:translateZ(35px) scale(1)}}
+/* Fruity: a wide, lateral glide with a passing glass reflection. */
+.stage-glide .stage-float{animation:browser-glide 11s ease-in-out infinite;animation-play-state:paused}
+.stage-glide .stage-browser:after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,#fff3 48%,transparent 60%);translate:-130% 0;animation:glass-pass 11s ease-in-out infinite;animation-play-state:inherit;pointer-events:none}
+@keyframes browser-glide{0%,100%{transform:translateX(-18px) rotateY(13deg) rotateZ(2deg)}50%{transform:translateX(18px) rotateY(-8deg) rotateZ(-1deg)}}
+@keyframes glass-pass{20%{translate:-130% 0}65%,100%{translate:130% 0}}
+/* Screen presentation: a rounded landscape tablet that gently rocks toward the viewer. */
+.stage-tablet .stage-browser{padding:14px 20px;border-radius:28px;border:2px solid #666a65;background:#111412;box-shadow:3px 4px 0 #585b54,8px 12px 0 #090c09,18px 30px 35px #0007}
+.stage-tablet .stage-chrome{display:none}.stage-tablet .stage-screen{border-radius:12px}
+.stage-tablet .stage-browser:after{content:'';position:absolute;left:7px;top:49%;width:5px;height:5px;border-radius:50%;background:#555}
+.stage-tablet .stage-float{animation:tablet-rock 8s ease-in-out infinite;animation-play-state:paused}
+@keyframes tablet-rock{0%,100%{transform:rotateX(17deg) rotateZ(-7deg) scale(.93)}50%{transform:rotateX(-7deg) rotateZ(4deg) scale(1)}}
+/* Identity: an unframed print board with a slower turntable motion. */
+.stage-artwork .stage-browser{padding:0;border:4px solid #e0dfd3;border-radius:1px;box-shadow:5px 5px 0 #9d9c91,10px 10px 0 #4e504a,18px 28px 40px #0008}
+.stage-artwork .stage-chrome{display:none}.stage-artwork .stage-screen{border-radius:0}
+.stage-artwork .stage-float{animation:artwork-turn 13s ease-in-out infinite;animation-play-state:paused}
+@keyframes artwork-turn{0%,100%{transform:rotateY(-18deg) rotateZ(3deg) translateY(4px)}50%{transform:rotateY(18deg) rotateZ(-3deg) translateY(-5px)}}
+.project-stage.stage-active .stage-float{animation-play-state:running}
+@media(max-width:700px){.stage-layers .stage-tilt{width:73%}.stage-laptop .stage-tilt{width:76%}.laptop-base{height:15px;bottom:-12px}.stage-tablet .stage-browser{padding:8px 12px;border-radius:18px}.stage-tablet .stage-screen{border-radius:9px}.site-atmosphere>div{background-size:62px 62px}}
